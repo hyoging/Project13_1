@@ -58,8 +58,10 @@ public class MainActivity extends AppCompatActivity {
         });
         selectedMusic = arrList.get(0);
 
-        Button btnStart = findViewById(R.id.btn_start);
-        Button btnstop = findViewById(R.id.btn_stop);
+        btnStart = findViewById(R.id.btn_start);
+        btnStop = findViewById(R.id.btn_stop);
+        btnPause = findViewById(R.id.btn_pause);
+
         textMusic = findViewById(R.id.text_music);
         proBar = findViewById(R.id.progress);
 
@@ -83,24 +85,24 @@ public class MainActivity extends AppCompatActivity {
         btnPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(btnPause.getText().equals("일시 중지")){
+                if(btnPause.getText().equals("일시중지")){
                     media.pause();
                     btnPause.setText("이어듣기");
                     proBar.setVisibility(View.INVISIBLE);
-                }else if(btnPause.getText().equals("이어 듣기")){
+                }else if(btnPause.getText().equals("이어듣기")){
                     media.start();
-                    btnPause.setText("일시 중지");
+                    btnPause.setText("일시중지");
                     proBar.setVisibility(View.VISIBLE);
                 }
             }
         });
-        btnstop.setOnClickListener(new View.OnClickListener() {
+        btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 media.stop();
                 media.reset();
                 btnStart.setClickable(true);
-                btnstop.setClickable(false);
+                btnStop.setClickable(false);
                 textMusic.setText("실행음악 중지: ");
                 proBar.setVisibility(View.INVISIBLE);
             }
