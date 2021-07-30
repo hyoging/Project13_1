@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 btnStart.setClickable(true);
                 btnStop.setClickable(false);
 
-                textMusic.setText("실행음악 중지: ");
+                textMusic.setText("실행중인 음악 중지: ");
                 textTime.setText(R.string.text_time);
             }
         });
